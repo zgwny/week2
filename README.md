@@ -1,20 +1,20 @@
-﻿串行GC 
+# 串行GC 
 
 算法：年轻代 ：mark-copy（标记-复制） 算法 /老年代 ：mark-sweep-compact（标记-清除-整理）算法。
 特点：串行 单线程 CPU利用率高 STW时间长
 目标：响应速度优先
 
-并行GC 
+# 并行GC 
 算法：年轻代使用mark-copy（标记-复制） 算法 /老年代使用mark-sweep-compact（标记-清除-整理）算法。
 特点：并行 多线程 STW总暂停时间更短
 目标：吞吐量优先
 
-CMS GC
+# CMS GC
 算法：年轻代：并行STW 方式的mark-copy (标记-复制)算法 /老年代使用mark-sweep (标记-清除)算法。
 特点：年轻代并行 老年代并发 降低系统延迟
 目标：响应速度优先
 
-G1
+# G1
 堆内存部分为老年代和年轻代。2048可以存放对象的小块区域，每块区域，可以一会被定义为Eden区，一会是Survive区，一会是old区。
 Eden+Survive是年轻代， Old是老年代
 算法：年轻代/老年代 mark-compact-copy (标记-整理-复制)算法 
